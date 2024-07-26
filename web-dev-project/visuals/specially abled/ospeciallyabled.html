@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation for Specially Abled</title>
+     <link rel="stylesheet" href="specially-abled.css">
+    
+  </head>
+
+  <body>
+    <div class="main">
+      <nav>
+        <span id="logoImg"
+          ><img src="/visuals/clothes/assets/images/logo-img.png" alt=""
+        /></span>
+        <span id="home-nav-span">
+          <a href="/visuals/homepage/index.html"> Home</a></span
+        >
+        <span id="cloths-nav-span"
+          ><a href="/visuals/clothes/clothes.html">Clothes</a></span
+        >
+        <span id="food-for-animals-nav-span"
+          ><a href="">Food For Animals</a></span
+        >
+        <span id="food-for-poor-span"><a href="">Food For Poor</a></span>
+        <span id="donation-for-specially-abled-nav-span"
+          ><a href="">Donation For Specially Abled</a></span
+        >
+        <span id="blood-donation-nav-span"
+          ><a href="">Donation For Specially Abled</a></span
+        >
+        <span id="contact-us-nav-span"><a href="">Contact Us</a></span>
+      </nav>
+
+      <div id="donation-intro">
+        <h1>Donation for Specially Abled</h1>
+
+        <img
+          src="/visuals/clothes/assets/images/cloth-donation-intro-image.jpeg"
+          alt=""
+          width="30%"
+          height="auto"
+        />
+        <p id="donation-intro-donation-msg">
+          Your donation can change lives. By contributing to our cause for the
+          disabled, you're helping us create a more inclusive and accessible
+          world. Every donation, no matter how big or small, makes a difference
+          in providing essential resources, support, and opportunities for those
+          with disabilities. Together, we can empower individuals to thrive and
+          overcome barriers. Thank you for your generosity and for being a part
+          of our mission to make a positive impact in the lives of the disabled
+          community.
+        </p>
+      </div>
+
+      <div id="donation-process-div">
+        <h1>How we work</h1>
+        <div id="about-us">
+          <p>
+            At our organization, we collaborate closely with numerous reputable
+            NGOs, fostering ongoing partnerships while actively seeking out new
+            organizations to support through our donations. Presently, we
+            proudly collaborate with three NGOs dedicated to empowering
+            individuals with special needs. These impactful organizations are
+            often situated on the outskirts of urban areas. Before allocating
+            any donations received through our website, we meticulously review
+            the activities and initiatives of each NGO, ensuring alignment with
+            our mission and values. Only after thorough evaluation and
+            confirmation of their impactful work do we direct your generous
+            contributions to support their noble endeavors.
+          </p>
+        </div>
+        <div id="donation-process-scheduled-pickup" class="process-details">
+          <img
+            src="/visuals/clothes/assets/images/scheduled-pickup-image.jpg"
+            alt=""
+          />
+          <div class="process-details-text">
+            <p>1. Schedule a pickup</p>
+            <p>2. We'll come to your doorstep</p>
+            <p>3. Collect your clothes</p>
+          </div>
+        </div>
+        <div id="donation-process-donate-at-doorsted" class="process-details">
+          <img
+            src="/visuals/clothes/assets/images/donate-at-doorstep-img.avif"
+            alt=""
+          />
+          <div class="process-details-text">
+            <p>1. Drop off your clothes at our doorstep</p>
+            <p>2. We'll collect them</p>
+            <p>3. You're done!</p>
+          </div>
+        </div>
+        <div id="donation-process-our-network" class="process-details">
+          <img
+            src="/visuals/clothes/assets/images/our-network-img.jpeg"
+            alt=""
+          />
+          <div class="process-details-text">
+            <p>1. We'll connect you with our network of NGOs</p>
+            <p>
+              2. Your clothes will reach those in need through our large network
+            </p>
+            <p>3. You've made a difference!</p>
+          </div>
+        </div>
+      </div>
+      <div id="whom-to-donate">
+        <h1>Whom would you like to donate for ?</h1>
+        <div id="radio-div">
+          <!-- <form> -->
+            <div class="donating-options">
+              <input
+                type="radio"
+                name="disability"
+                id="physically"
+                value="physically"
+                checked
+              />
+              <label for="physically"> Physically Disabled</label>
+            </div>
+            <div class="donating-options">
+              <input
+                type="radio"
+                name="disability"
+                id="mentally"
+                value="mentally"
+              />Mentally Disabled
+              <label for="mentally"> </label>
+            </div>
+            <div class="donating-options">
+              <input
+                type="radio"
+                id="both"
+                name="disability"
+                value="both"
+              />Both
+              <label for="both"> </label>
+            </div>
+          <!-- </form> -->
+          <h1>
+            You may donate in kind or in money. <br />To donate in kind, fill
+            out the form below. To donate money, scan the QR code.
+          </h1>
+        </div>
+      </div>
+      <div id="donor-form-div">
+        <h1>Fill the Form below</h1>
+        <form id="donate-clothes-form" method="post">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (with country code) :</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="clothes">Number of Clothes:</label>
+            <input type="number" id="number" name="number" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Enter Your E-mail</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="special-instructions">Any special Instruction</label>
+            <input
+              type="text"
+              id="special-instructions"
+              name="special-instructions"
+            />
+          </div>
+          <button type="submit">Donate</button>
+        </form>
+      </div>
+      <div id="footer">
+        <div>
+          <img
+            id="logo-img-footer"
+            src="/visuals/clothes/assets/images/logo-img.png"
+            alt=""
+          />
+          <h6>SPREADING HUMANITY</h6>
+        </div>
+        <ul id="footer-list">
+          <li><a href="">Terms and Conditions</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Refund Policy</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="specially-abled.js">
+
+    </script>
+  </body>
+</html>

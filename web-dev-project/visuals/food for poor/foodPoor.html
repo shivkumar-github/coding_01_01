@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate food for poor</title>
+    <style>
+        * {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(236, 236, 236);
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main>div {
+            border: 2px solid rgb(203, 203, 203);
+            border-radius: 6px;
+            margin-bottom: 20vh;
+            background-color: white;
+            width: 70vw;
+        }
+
+        .container {
+            width: 50vw;
+            height: 80vh;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        nav {
+            background-color: white;
+            font-weight: 500;
+            width: 100vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 0.4rem;
+        }
+
+        nav span {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #logoImg img {
+            height: 90%;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        #donation-intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            padding: 5vh 3vw;
+        }
+
+        #donation-intro-donation-msg {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            width: 80%;
+        }
+
+        #shocking-facts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            padding: 5vh 3vw;
+            line-height: 2rem;
+        }
+
+        #donation-process-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            padding: 5vh 0;
+        }
+
+        .process-details {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 5vh 0;
+        }
+
+        .process-details img {
+            width: 25%;
+            height: auto;
+        }
+
+        #donor-input-div {
+            width: 80%;
+            height: auto;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 5vh 0;
+        }
+
+        .radio-inputs-and-labels-div {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #donor-form-div {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 5vh 0;
+
+        }
+
+        #donor-form-div form {
+            border: 2px solid rgb(203, 203, 203);
+            border-radius: 6px;
+            padding: 2vh 2vw;
+        }
+
+        .form-group input,
+        .form-group select {
+            border: 1px solid rgb(193, 193, 193);
+            width: 70%;
+            height: 2rem;
+        }
+
+        .old-clothes-new-clothes-div input[type="checkbox"],
+        .old-clothes-new-clothes-div label {
+            display: inline-block;
+            margin: 0.3rem 0.5rem;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 3vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #qr-code-img-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 5vh 0;
+        }
+
+        #qr-code-img {
+            width: 30%;
+            height: auto;
+        }
+
+        #ngo-address-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 5vh 0;
+        }
+
+        #footer {
+
+            width: 100vw;
+            height: 20vh;
+            padding: 2vh 0;
+        }
+
+        #logo-img-footer {
+            width: 3vw;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        #footer-list {
+            margin-top: 1vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <span id="logoImg"><img src="logo-img.png" alt=""></span>
+            <span id="home-nav-span"> <a href="/visuals/homepage/index.html"> Home</a></span>
+            <span id="cloths-nav-span"><a href="/visuals/clothes/clothes.html">Clothes</a></span>
+            <span id="food-for-animals-nav-span"><a href="">Food For Animals</a></span>
+            <span id="food-for-poor-span"><a href="">Food For Poor</a></span>
+            <span id="donation-for-specially-abled-nav-span"><a href="">Donation For Specially
+                    Abled</a></span>
+            <span id="blood-donation-nav-span"><a href="/visuals/blood donation/blood.html">Blood Donation</a></span>
+            <span id="contact-us-nav-span"><a href="">Contact Us</a></span>
+        </nav>
+
+        <h1>Donate food for poor</h1>
+        <div id="donation-intro">
+            <h2>Why Donate food?</h2>
+            <img src="/visuals/food for poor/poorimg.jpg" alt="" width="30%" height="auto">
+            <p id="donation-intro-donation-msg">Donating food is an expression of our shared moral duty to care for one
+                another. It is a compassionate response to the pressing issue of hunger, ensuring that no one in our
+                community goes without sustenance. Your generosity serves as a beacon of empathy, embodying the values
+                of compassion and solidarity. By extending a helping hand through food donations, you embody the very
+                essence of human decency and uphold the inherent worth and dignity of every individual. Let us unite in
+                this moral imperative to nourish bodies and uplift spirits, forging a brighter, more equitable future
+                for all.</p>
+        </div>
+
+        <div id="shocking-facts">
+            <h1>Shocking Facts</h1>
+            <p>1. Approximately 820 million people worldwide suffer from chronic hunger, while one-third of all food
+                produced globally is wasted.</p>
+            <p>2. In the United States, nearly 40% of food goes uneaten, contributing to environmental issues like
+                greenhouse gas emissions.</p>
+            <p>3. Food waste exacerbates hunger disparities, with millions lacking access to nutritious meals despite
+                surplus food availability.</p>
+            <p>4. Despite technological advancements, food distribution inefficiencies persist, leaving many without
+                adequate sustenance.</p>
+            <p>5. Obesity rates are soaring alongside food waste, signaling systemic issues in food access and
+                nutritional education.</p>
+            <p>6. Food insecurity affects vulnerable populations disproportionately, including children, seniors, and
+                low-income households.</p>
+            <p>7. Surplus food redistribution programs exist but often face logistical challenges and lack widespread
+                support.</p>
+            <p>8. Addressing food waste not only alleviates hunger but also benefits the environment and reduces
+                economic strain.</p>
+            <p>9. Collaborative efforts involving governments, businesses, and communities are crucial to tackling the
+                complex issue of food insecurity.</p>
+            <p>10. By raising awareness, supporting food recovery initiatives, and advocating for policy changes,
+                individuals can contribute to lasting solutions for hunger relief.</p>
+        </div>
+
+        <div id="donation-process-div">
+            <h1>How we work</h1>
+            <div id="donation-process-scheduled-pickup" class="process-details">
+                <img src="scheduled-pickup-image.jpg" alt="">
+                <div class="process-details-text">
+                    <p>1. Schedule a pickup</p>
+                    <p>2. We'll come to your doorstep</p>
+                    <p>3. Collect the food</p>
+
+                </div>
+            </div>
+            <div id="donation-process-donate-at-doorstep" class="process-details">
+                <img src="donate-at-doorstep-img.avif" alt="">
+                <div class="process-details-text">
+                    <p>1. Deliver food at our doorstep</p>
+                    <p>2. We'll collect them</p>
+                    <p>3. You're done!
+
+                </div>
+            </div>
+            <div id="donation-process-our-network" class="process-details">
+                <img src="our-network-img.jpeg" alt="">
+                <div class="process-details-text">
+                    <p>1. We'll connect you with our network of NGOs</p>
+                    <p>2. Your food will reach those in need through our large network</p>
+                    <p>3. You've made a difference!</p>
+                </div>
+            </div>
+        </div>
+        <div id="donor-input-div">
+            <h1>How you wish to donate?</h1>
+            <div id="delivery-options-div">
+                <div class="radio-inputs-and-labels-div">
+                    <input type="radio" id="deliver-to-ngo" name="delivery-options-radio" value="deliver-to-ngo">
+                    <label for="deliver-to-ngo">Deliver to NGO address</label>
+                </div>
+                <div class="radio-inputs-and-labels-div">
+                    <input type="radio" id="pick-up-from-location" name="delivery-options-radio"
+                        value="pick-up-from-location">
+                    <label for="pick-up-from-location">Schedule a pickup at your address.</label>
+                </div>
+                <div class="radio-inputs-and-labels-div">
+                    <input type="radio" id="donate-money" name="delivery-options-radio" value="donate-money">
+                    <label for="donate-money">Donate money to buy food.</label>
+                </div>
+            </div>
+            <div id="ngo-address-div"><a href="">View Our Address</a></div>
+            <div id="donor-form-div">
+                <h2>Fill the Form below</h2>
+                <form id="donate-clothes-form" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="countryCode">Country Code:</label>
+                        <select id="countryCode" name="countryCode">
+                            <option value="+93">+93 (Afghanistan)</option>
+                            <option value="+355">+355 (Albania)</option>
+                            <option value="+213">+213 (Algeria)</option>
+                            <option value="+376">+376 (Andorra)</option>
+                            <option value="+244">+244 (Angola)</option>
+                            <option value="+1-268">+1-268 (Antigua and Barbuda)</option>
+                            <option value="+54">+54 (Argentina)</option>
+                            <option value="+374">+374 (Armenia)</option>
+                            <option value="+61">+61 (Australia)</option>
+                            <option value="+43">+43 (Austria)</option>
+                            <option value="+994">+994 (Azerbaijan)</option>
+                            <option value="+1-242">+1-242 (Bahamas)</option>
+                            <option value="+973">+973 (Bahrain)</option>
+                            <option value="+880">+880 (Bangladesh)</option>
+                            <option value="+1-246">+1-246 (Barbados)</option>
+                            <option value="+375">+375 (Belarus)</option>
+                            <option value="+32">+32 (Belgium)</option>
+                            <option value="+501">+501 (Belize)</option>
+                            <option value="+229">+229 (Benin)</option>
+                            <option value="+975">+975 (Bhutan)</option>
+                            <option value="+591">+591 (Bolivia)</option>
+                            <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                            <option value="+267">+267 (Botswana)</option>
+                            <option value="+55">+55 (Brazil)</option>
+                            <option value="+673">+673 (Brunei)</option>
+                            <option value="+359">+359 (Bulgaria)</option>
+                            <option value="+226">+226 (Burkina Faso)</option>
+                            <option value="+257">+257 (Burundi)</option>
+                            <option value="+855">+855 (Cambodia)</option>
+                            <option value="+237">+237 (Cameroon)</option>
+                            <option value="+1">+1 (Canada)</option>
+                            <option value="+238">+238 (Cape Verde)</option>
+                            <option value="+236">+236 (Central African Republic)</option>
+                            <option value="+235">+235 (Chad)</option>
+                            <option value="+56">+56 (Chile)</option>
+                            <option value="+86">+86 (China)</option>
+                            <option value="+57">+57 (Colombia)</option>
+                            <option value="+269">+269 (Comoros)</option>
+                            <option value="+242">+242 (Congo)</option>
+                            <option value="+506">+506 (Costa Rica)</option>
+                            <option value="+225">+225 (Cote d'Ivoire)</option>
+                            <option value="+385">+385 (Croatia)</option>
+                            <option value="+53">+53 (Cuba)</option>
+                            <option value="+357">+357 (Cyprus)</option>
+                            <option value="+420">+420 (Czech Republic)</option>
+                            <option value="+243">+243 (Democratic Republic of the Congo)
+                            </option>
+                            <option value="+45">+45 (Denmark)</option>
+                            <option value="+253">+253 (Djibouti)</option>
+                            <option value="+1-767">+1-767 (Dominica)</option>
+                            <option value="+1-809">+1-809 (Dominican Republic)</option>
+                            <option value="+670">+670 (East Timor)</option>
+                            <option value="+593">+593 (Ecuador)</option>
+                            <option value="+20">+20 (Egypt)</option>
+                            <option value="+503">+503 (El Salvador)</option>
+                            <option value="+240">+240 (Equatorial Guinea)</option>
+                            <option value="+291">+291 (Eritrea)</option>
+                            <option value="+372">+372 (Estonia)</option>
+                            <option value="+251">+251 (Ethiopia)</option>
+                            <option value="+679">+679 (Fiji)</option>
+                            <option value="+358">+358 (Finland)</option>
+                            <option value="+33">+33 (France)</option>
+                            <option value="+241">+241 (Gabon)</option>
+                            <option value="+220">+220 (Gambia)</option>
+                            <option value="+995">+995 (Georgia)</option>
+                            <option value="+49">+49 (Germany)</option>
+                            <option value="+233">+233 (Ghana)</option>
+                            <option value="+30">+30 (Greece)</option>
+                            <option value="+1-473">+1-473 (Grenada)</option>
+                            <option value="+502">+502 (Guatemala)</option>
+                            <option value="+224">+224 (Guinea)</option>
+                            <option value="+245">+245 (Guinea-Bissau)</option>
+                            <option value="+592">+592 (Guyana)</option>
+                            <option value="+509">+509 (Haiti)</option>
+                            <option value="+504">+504 (Honduras)</option>
+                            <option value="+852">+852 (Hong Kong)</option>
+                            <option value="+36">+36 (Hungary)</option>
+                            <option value="+354">+354 (Iceland)</option>
+                            <option value="+91" selected>+91 (India)</option>
+                            <option value="+62">+62 (Indonesia)</option>
+                            <option value="+98">+98 (Iran)</option>
+                            <option value="+964">+964 (Iraq)</option>
+                            <option value="+353">+353 (Ireland)</option>
+                            <option value="+972">+972 (Israel)</option>
+                            <option value="+39">+39 (Italy)</option>
+                            <option value="+1-876">+1-876 (Jamaica)</option>
+                            <option value="+81">+81 (Japan)</option>
+                            <option value="+962">+962 (Jordan)</option>
+                            <option value="+7">+7 (Kazakhstan)</option>
+                            <option value="+254">+254 (Kenya)</option>
+                            <option value="+686">+686 (Kiribati)</option>
+                            <option value="+850">+850 (North Korea)</option>
+                            <option value="+82">+82 (South Korea)</option>
+                            <option value="+965">+965 (Kuwait)</option>
+                            <option value="+996">+996 (Kyrgyzstan)</option>
+                            <option value="+856">+856 (Laos)</option>
+                            <option value="+371">+371 (Latvia)</option>
+                            <option value="+961">+961 (Lebanon)</option>
+                            <option value="+266">+266 (Lesotho)</option>
+                            <option value="+231">+231 (Liberia)</option>
+                            <option value="+218">+218 (Libya)</option>
+                            <option value="+423">+423 (Liechtenstein)</option>
+                            <option value="+370">+370 (Lithuania)</option>
+                            <option value="+352">+352 (Luxembourg)</option>
+                            <option value="+853">+853 (Macau)</option>
+                            <option value="+389">+389 (North Macedonia)</option>
+                            <option value="+261">+261 (Madagascar)</option>
+                            <option value="+265">+265 (Malawi)</option>
+                            <option value="+60">+60 (Malaysia)</option>
+                            <option value="+960">+960 (Maldives)</option>
+                            <option value="+223">+223 (Mali)</option>
+                            <option value="+356">+356 (Malta)</option>
+                            <option value="+692">+692 (Marshall Islands)</option>
+                            <option value="+222">+222 (Mauritania)</option>
+                            <option value="+230">+230 (Mauritius)</option>
+                            <option value="+52">+52 (Mexico)</option>
+                            <option value="+691">+691 (Micronesia)</option>
+                            <option value="+373">+373 (Moldova)</option>
+                            <option value="+377">+377 (Monaco)</option>
+                            <option value="+976">+976 (Mongolia)</option>
+                            <option value="+382">+382 (Montenegro)</option>
+                            <option value="+212">+212 (Morocco)</option>
+                            <option value="+258">+258 (Mozambique)</option>
+                            <option value="+95">+95 (Myanmar)</option>
+                            <option value="+264">+264 (Namibia)</option>
+                            <option value="+674">+674 (Nauru)</option>
+                            <option value="+977">+977 (Nepal)</option>
+                            <option value="+31">+31 (Netherlands)</option>
+                            <option value="+64">+64 (New Zealand)</option>
+                            <option value="+505">+505 (Nicaragua)</option>
+                            <option value="+227">+227 (Niger)</option>
+                            <option value="+234">+234 (Nigeria)</option>
+                            <option value="+47">+47 (Norway)</option>
+                            <option value="+968">+968 (Oman)</option>
+                            <option value="+92">+92 (Pakistan)</option>
+                            <option value="+680">+680 (Palau)</option>
+                            <option value="+507">+507 (Panama)</option>
+                            <option value="+675">+675 (Papua New Guinea)</option>
+                            <option value="+595">+595 (Paraguay)</option>
+                            <option value="+51">+51 (Peru)</option>
+                            <option value="+63">+63 (Philippines)</option>
+                            <option value="+48">+48 (Poland)</option>
+                            <option value="+351">+351 (Portugal)</option>
+                            <option value="+974">+974 (Qatar)</option>
+                            <option value="+40">+40 (Romania)</option>
+                            <option value="+7">+7 (Russia)</option>
+                            <option value="+250">+250 (Rwanda)</option>
+                            <option value="+1-869">+1-869 (Saint Kitts and Nevis)</option>
+                            <option value="+1-758">+1-758 (Saint Lucia)</option>
+                            <option value="+1-784">+1-784 (Saint Vincent and the Grenadines)
+                            </option>
+                            <option value="+685">+685 (Samoa)</option>
+                            <option value="+378">+378 (San Marino)</option>
+                            <option value="+239">+239 (Sao Tome and Principe)</option>
+                            <option value="+966">+966 (Saudi Arabia)</option>
+                            <option value="+221">+221 (Senegal)</option>
+                            <option value="+381">+381 (Serbia)</option>
+                            <option value="+248">+248 (Seychelles)</option>
+                            <option value="+232">+232 (Sierra Leone)</option>
+                            <option value="+65">+65 (Singapore)</option>
+                            <option value="+421">+421 (Slovakia)</option>
+                            <option value="+386">+386 (Slovenia)</option>
+                            <option value="+677">+677 (Solomon Islands)</option>
+                            <option value="+252">+252 (Somalia)</option>
+                            <option value="+27">+27 (South Africa)</option>
+                            <option value="+211">+211 (South Sudan)</option>
+                            <option value="+34">+34 (Spain)</option>
+                            <option value="+94">+94 (Sri Lanka)</option>
+                            <option value="+249">+249 (Sudan)</option>
+                            <option value="+597">+597 (Suriname)</option>
+                            <option value="+268">+268 (Swaziland)</option>
+                            <option value="+46">+46 (Sweden)</option>
+                            <option value="+41">+41 (Switzerland)</option>
+                            <option value="+963">+963 (Syria)</option>
+                            <option value="+886">+886 (Taiwan)</option>
+                            <option value="+992">+992 (Tajikistan)</option>
+                            <option value="+255">+255 (Tanzania)</option>
+                            <option value="+66">+66 (Thailand)</option>
+                            <option value="+228">+228 (Togo)</option>
+                            <option value="+676">+676 (Tonga)</option>
+                            <option value="+1-868">+1-868 (Trinidad and Tobago)</option>
+                            <option value="+216">+216 (Tunisia)</option>
+                            <option value="+90">+90 (Turkey)</option>
+                            <option value="+993">+993 (Turkmenistan)</option>
+                            <option value="+688">+688 (Tuvalu)</option>
+                            <option value="+256">+256 (Uganda)</option>
+                            <option value="+380">+380 (Ukraine)</option>
+                            <option value="+971">+971 (United Arab Emirates)</option>
+                            <option value="+44">+44 (United Kingdom)</option>
+                            <option value="+1">+1 (United States)</option>
+                            <option value="+598">+598 (Uruguay)</option>
+                            <option value="+998">+998 (Uzbekistan)</option>
+                            <option value="+678">+678 (Vanuatu)</option>
+                            <option value="+379">+379 (Vatican City)</option>
+                            <option value="+58">+58 (Venezuela)</option>
+                            <option value="+84">+84 (Vietnam)</option>
+                            <option value="+967">+967 (Yemen)</option>
+                            <option value="+260">+260 (Zambia)</option>
+                            <option value="+263">+263 (Zimbabwe)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone number :</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+
+                        Is the food cooked or uncooked?
+                        <div class="old-clothes-new-clothes-div"><input type="checkbox" id="old-clothes"
+                                name="new-or-old-checkbox" value="old-clothes">
+                            <label for="old-clothes">Cooked</label>
+                        </div>
+                        <div class="old-clothes-new-clothes-div"><input type="checkbox" id="new-clothes"
+                                name="new-or-old-checkbox" value="new-clothes"><label for="new-clothes">Uncooked</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <!-- <label for="clothes">Food materials you wish to donate </label> -->
+                        <textarea name="material" id="material" cols="30" rows="10" required placeholder="Add food materials you wish to donate"></textarea>
+                        <!-- <input type="text" id="material" name="material" required> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Enter Your E-mail</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="special-instructions">Any special Instruction</label>
+                        <input type="text" id="special-instructions" name="special-instructions">
+                    </div>
+                    <button type="submit">Donate</button>
+                </form>
+            </div>
+            <div id="qr-code-img-div">
+                <img id="qr-code-img" src="DakshGPayQR.jpeg" alt="">
+            </div>
+        </div>
+        <div id="footer">
+            <div><img id="logo-img-footer" src="logo-img.png" alt="">
+                <h6>SPREADING HUMANITY</h6>
+            </div>
+            <ul id="footer-list">
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Refund Policy</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+       // Wait for the DOM content to load
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the uncooked checkbox
+    var uncookedCheckbox = document.getElementById('new-clothes');
+    // Get the textarea
+    var materialTextarea = document.getElementById('material');
+
+    // Hide the textarea initially
+    materialTextarea.style.display = 'none';
+
+    // Add event listener to the uncooked checkbox
+    uncookedCheckbox.addEventListener('change', function() {
+        // If the uncooked checkbox is checked, show the textarea, otherwise hide it
+        if (uncookedCheckbox.checked) {
+            materialTextarea.style.display = 'block';
+        } else {
+            materialTextarea.style.display = 'none';
+        }
+    });
+});
+
+
+        const donateClothesForm = document.getElementById('donate-clothes-form');
+        donateClothesForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(donateClothesForm);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                address: formData.get('address'),
+                clothes: formData.get('clothes')
+            };
+            console.log(data);
+            donateClothesForm.reset();
+        });
+
+        const donorFormDiv = document.getElementById('donor-form-div');
+        const qrCodeImgDiv = document.getElementById('qr-code-img-div');
+        const ngoAddressDiv = document.getElementById('ngo-address-div');
+
+        // Initially hide the qrCodeImgDiv, donorFormDiv, ngoAddressDiv
+        if (ngoAddressDiv && donorFormDiv && qrCodeImgDiv) {
+            qrCodeImgDiv.style.display = 'none';
+            donorFormDiv.style.display = 'none';
+            ngoAddressDiv.style.display = 'none';
+        }
+
+        const deliveryOptionsDiv = document.getElementById('delivery-options-div');
+        if (deliveryOptionsDiv && donorFormDiv && qrCodeImgDiv) {
+            deliveryOptionsDiv.addEventListener('change', (e) => {
+                const selectedOption = document.querySelector('input[name="delivery-options-radio"]:checked');
+                if (selectedOption && selectedOption.value === 'pick-up-from-location') {
+                    donorFormDiv.style.display = 'flex'; // Show the donor form
+                    qrCodeImgDiv.style.display = 'none'; // Hide the qr code image
+                    ngoAddressDiv.style.display = 'none'; // Hide the ngo address
+                } else if (selectedOption && selectedOption.value === 'deliver-to-ngo') {
+                    donorFormDiv.style.display = 'none'; // Hide the donor form
+                    qrCodeImgDiv.style.display = 'none'; // Hide the qr code image
+                    ngoAddressDiv.style.display = 'flex'; // Show the ngo address
+                }
+                else if (selectedOption && selectedOption.value === 'donate-money') {
+                    donorFormDiv.style.display = 'none'; // Hide the donor form
+                    qrCodeImgDiv.style.display = 'flex'; // Show the qr code image
+                    ngoAddressDiv.style.display = 'none'; // Hide the ngo address
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

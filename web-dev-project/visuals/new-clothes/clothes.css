@@ -1,0 +1,587 @@
+* {
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(236, 236, 236);
+    
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main>div {
+    border: 2px solid rgb(203, 203, 203);
+    border-radius: 6px;
+    margin-bottom: 20vh;
+   
+    width: 70vw;
+}
+.main{
+    background-image: url(https://media.istockphoto.com/id/1209474593/photo/child-sorting-clothes-for-donation.jpg?s=612x612&w=0&k=20&c=fH9ywKBoQ33rbzdvoaO3hAM7txymuYXZzMNiozp4Z60=);
+    background-position: center;
+    background-size: cover;
+    /* z-index: -1; */
+}
+.container {
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#cursor{
+    border: none;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(5, 82, 85);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 200;
+}
+#cursor-blur{
+    height:400px;
+    width: 400px;
+    background-color: rgba(5, 82, 85, 0.682);
+    border-radius: 50%;
+    position:fixed;
+    z-index: 9;
+    filter: blur(40px);
+}
+nav {
+    position: fixed;
+    top: 0;
+    font-size: larger;
+    font-weight: 500;
+    width: 100vw;
+    height: 145px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 0.4rem;
+    z-index: 100;
+    
+}
+nav span#logoImg img{
+    height: 100px;
+    width: 90px;
+    border-radius: 100%;
+}
+nav span#home-nav-span a{
+    color: white;
+   
+    
+}
+/* nav span#home-nav-span span#nav-hover-home{
+    height: 50px;
+    width: 90px;
+    margin-left: 20px;
+    background-color:orangered;
+    z-index: -1;       
+}
+nav span#home-nav-span span#nav-hover-home :hover{
+
+} */
+/* nav span#home-nav-span{
+    transition: all ease-in-out 0.2s;
+}
+nav span#home-nav-span:hover{
+    background-color: orangered;
+} */
+nav span#cloths-nav-span a{
+    color: white;
+    
+}
+nav span#food-for-animals-nav-span a{
+    color: white;
+}
+nav span#food-for-poor-span a{
+    color: white;
+}
+nav span#donation-for-specially-abled-nav-span a{
+    color: white;
+}
+nav span#blood-donation-nav-span a{
+    color: white;
+}
+nav span#contact-us-nav-span a{
+    color: white;
+}
+nav span {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#donation-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 170px;
+    align-items: center;
+    width: 60%;
+    height:420px;
+    padding: 5vh 3vw;
+    border-radius: 20px;
+    border: none;
+    font-weight: 400;
+    background-color: rgb(5, 82, 85); /*before this used dark turquoise*/
+    transition: all ease 0.8s;
+    z-index: 99;
+    
+    
+}
+#donation-intro h1{
+    font-size: 3rem;
+    color:transparent;
+    -webkit-text-stroke: 1px greenyellow; 
+    position: relative;
+    
+}
+/* #donation-intro h1{
+    content: "";
+    position:absolute;
+    bottom: -2px;
+    width: 100%;
+    background: greenyellow;
+    border-radius: 50px;
+    transform: scaleX(0);
+    transition: transform 0.2s linear;
+}
+#donation-intro h1:hover::after{
+    transform: scaleX(1);   
+} */
+/* #donation-intro h1::before{
+    content: "Donate Clothes";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    color: greenyellow;
+    border-right: 8px solid greenyellow;
+    transition: 1s ease-in-out;
+} */
+#donation-intro:hover h1{
+    color: rgb(173,255,47);    /*rgb(173,255,47) for default og greenyellow*/
+    filter: drop-shadow(0 0 25px greenyellow);  /*ADD TRANSITION TIME FOR HEADER TOO*/
+}
+p#donation-intro-donation-msg{
+    color: rgb(5, 82, 85); /*check error why text visible when not hovering?*/
+}
+/*rgba(8, 143, 145, 0.732)*/
+#donation-intro:hover{
+    background-color: black;  /*#769e05 for green color*/
+    transform: scale(1.1);
+}
+#donation-intro:hover p#donation-intro-donation-msg{
+    color: darkturquoise;
+}
+#donation-intro-donation-msg {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    width: 80%;
+}
+#scroller{
+    position: relative;
+    width: 100vw;
+    white-space: nowrap;
+    border: none;
+    z-index: 99;
+    overflow-x: auto;
+    overflow-y: hidden;
+  
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 20px;
+    animation-name: scroll;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in-2{
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 20px;
+    animation-name: scroll;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h1{
+    display: inline-block;
+    font-size: 130px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(5, 82, 85);
+    transition: all linear 0.5s;
+}
+#scroller h1:hover{
+    color: darkturquoise;
+}
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#shocking-facts {
+    background-color: rgb(5, 82, 85);
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    padding: 5vh 3vw;
+    line-height: 2rem;
+    transition: all ease 0.8s;
+    z-index: 99;
+}
+#shocking-facts:hover{
+    background-color: black;  /*rgba(8, 143, 145, 0.732) originally used*/
+    transform: scale(1.1);
+}
+#shocking-facts h1{
+   text-align: center;
+   font-size: 3rem;
+   color:transparent;
+   -webkit-text-stroke: 1px greenyellow; 
+   position: relative;
+}
+#shocking-facts:hover h1{
+    color: rgb(173,255,47);   
+    filter: drop-shadow(0 0 25px greenyellow);
+}
+#shocking-facts:hover #para p{
+    color: darkturquoise
+}
+#shocking-facts #para{
+    font-size: larger;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+#shocking-facts #para p{
+    color: rgb(5, 82, 85);
+}
+/* Hide the text initially */
+/*.typewriter p {
+    height: 600px;
+    font-size: 100px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap; 
+    border-right: .15em solid orange; 
+   
+    margin: 0 auto; 
+    z-index: 99;
+    display:inline-block;*/
+    /* Adjust speed for faster or slower typing effect */
+    /*animation: typing 4.5s steps(40, end), blink-caret .75s step-end infinite alternate;
+    
+    word-wrap: break-word;
+
+   
+  }*/
+  
+  /* The typing effect */
+  /*@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }*/
+  
+  /* The blinking cursor */
+ /* @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }*/
+  
+#donation-process-div {
+    background-color: rgb(5, 82, 85);
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 5vh 0;
+    transition: all ease 0.8s;
+    z-index: 99;
+}
+#donation-process-div .video iframe{
+    border: black;
+    border-width: 10px;
+}
+#donation-process-div h1{
+    font-size: 3rem;
+   color:transparent;
+   -webkit-text-stroke: 1px greenyellow; 
+   position: relative;
+}
+#donation-process-div:hover{
+    background-color: black;  /*rgba(0, 206, 209, 0.395) og used*/
+    transform: scale(1.1);
+}
+#donation-process-div:hover h1{
+    color: rgb(173,255,47);   
+    filter: drop-shadow(0 0 25px greenyellow);
+}
+#donation-process-div:hover #donation-process-scheduled-pickup p{
+    color: darkturquoise;
+}
+#donation-process-div:hover  #donation-process-donate-at-doorsted p{
+    color: darkturquoise;
+}
+#donation-process-div:hover  #donation-process-our-network p{
+    color: darkturquoise;
+}
+#donation-process-div #steps-para{
+    font-weight: 800;
+}
+#donation-process-scheduled-pickup p, #donation-process-donate-at-doorsted p, #donation-process-our-network p{
+    font-size: larger;
+    color: rgb(5, 82, 85);
+}
+#donation-process-div #steps-para p{
+    color: rgb(5, 82, 85);
+}
+#donation-process-div:hover #steps-para p{
+    color: yellow;
+    text-shadow: rgb(173,255,47) 5 -10px 20px;
+}
+.process-details {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 5vh 0;
+}
+
+.process-details img {
+    width: 25%;
+    height: auto;
+}
+#cards-container{
+    height: 600px;
+    width: 100vw;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+.card{
+    position: relative;
+    height: 80%;
+    width: 22%;
+    border-radius: 20px;
+    background-position: center;
+    object-fit: cover;
+    padding: 40px;
+    color: black;
+    overflow: hidden;
+    z-index: 99;
+    transition: all ease 0.6s;
+    animation: floatUpDown 1.5s infinite alternate ;
+}
+#card1 {
+    animation-delay: 0s;
+}
+
+#card2 {
+    animation-delay: 0.5s;
+}
+
+#card3 {
+    animation-delay: 1s;
+}
+
+#card4 {
+    animation-delay: 1.5s;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
+}
+.card img{
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.card .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width:100%;
+    background-color: darkturquoise;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+.overlay p{
+    font-size: 40px;
+    font-weight: 350;
+    color: black;
+    
+}
+.overlay h1{
+    color: black;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.card:hover .overlay {
+    opacity: 1;
+}
+
+#donor-form-div {
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 5vh 0;
+    z-index: 99;
+
+}
+#donor-form-div button{
+    background-color: orangered;
+    transition: 0.3s;
+}
+#donor-form-div button:hover{
+     background-color: darkturquoise;
+}
+#donate-clothes-form{
+    font-size: larger;
+}
+
+input {
+    border: 1px solid rgb(193, 193, 193);
+    width: 60%;
+    height: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 3vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#footer {
+    background-color:rgb(5,82,85) ;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+    width: 100vw;
+    height: 30vh;
+    padding: 2vh 0;
+    margin-bottom: 0;
+    border: none;
+    z-index: 99;
+}
+#logo-img-footer {
+    width: 5vw;
+    height: 90px;
+    border-radius: 50%;
+}
+#footer h6{
+    font-size: larger;
+    color: black;
+}
+#footer-list {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+}
+#footer-list a:hover{
+    color: orangered;
+}
+video{
+    height:500px;
+    width: 1000px;
+    border: none;
+    border-radius: 8px;
+}
