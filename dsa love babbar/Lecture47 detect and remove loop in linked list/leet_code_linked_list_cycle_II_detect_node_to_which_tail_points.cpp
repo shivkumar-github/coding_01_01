@@ -23,4 +23,31 @@ public:
         // if temp becomes null the loop breaks then no cycle is present
             return NULL;
     }
+
+    // approach 2 by floyds method
+     ListNode *detectCycle(ListNode *head) {
+        ListNode* fast = head;        
+        ListNode* slow = head;
+        bool isLoop = false;
+        while(fast && fast->next){
+            fast = fast->next->next;
+            slow = slow->next;
+            
+            if(fast == slow){
+                isLoop = true;
+                break;
+            }
+        }
+        if(isLoop){
+            slow = head;
+            while(slow != fast){
+                slow = slow->next;
+                fast = fast->next;
+            }
+            return slow;
+        }
+        else// no cycle is present
+            return NULL;
+        return NULL;
+    }
 };

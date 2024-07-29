@@ -28,33 +28,6 @@ public:
 
 	bool hasCycle(ListNode *head)
 	{
-		if (head == NULL)
-			return false;
-		//         we can use faster-slower approach in this problem
-		ListNode *slow = head;
-		if (head->next == NULL)
-			return false;
-		ListNode *fast = head->next;
-		while (1)
-		{
-			if (fast->next != NULL)
-				fast = fast->next;
-			else
-				return false;
-
-			if (fast->next != NULL)
-				fast = fast->next;
-			else
-				return false;
-
-			if (slow == fast)
-				return true;
-			slow = slow->next;
-		}
-		return true;
-	}
-	bool hasCycle2(ListNode *head)
-	{
 		ListNode *fast = head;
 		ListNode *slow = head;
 		while (fast && fast->next) // in && if first condition is false then second is not checked and in || if first is true then also second condition is not checked

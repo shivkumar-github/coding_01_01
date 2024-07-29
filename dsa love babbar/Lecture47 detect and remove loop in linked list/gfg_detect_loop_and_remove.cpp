@@ -32,6 +32,36 @@ class Solution {
             temp = temp->next;
         }
     }
+    // approach 2 using floyds algo
+      void removeLoop(Node* head) {
+        // code here
+        // just remove the loop without losing any nodes
+        Node* fast = head;
+        Node* slow = head;
+        bool isLoop = false;
+        while(fast && fast->next){
+            fast = fast->next->next;
+            slow = slow->next;
+            if(fast == slow){
+                isLoop = true;
+                break;
+            }
+        }
+        // first check if loop exists or not
+        if(!isLoop)
+            return;
+        slow = head;
+        // if yes then find the node at which loop starts
+        while(slow != fast){
+            slow = slow->next;
+            fast = fast->next;
+        }
+        // then start prev from start point and then countinue till you find prev node
+        Node* prev = slow;
+        while(prev->next != slow)
+            prev = prev ->next;
+        prev -> next = NULL;
+    }// we can directly find previous node while finding the point of loop but in case where slow and fast meet at the point of loop that code won't work 
 };
 int main(){
 
