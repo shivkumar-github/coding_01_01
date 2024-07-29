@@ -62,6 +62,40 @@ class Solution {
             prev = prev ->next;
         prev -> next = NULL;
     }// we can directly find previous node while finding the point of loop but in case where slow and fast meet at the point of loop that code won't work 
+    // alternate approach (rather than first moving slow to the starting node of the loop and the counting till slow, we will put the pointer in the process of finding the node for loop)
+
+
+    void removeLoop(Node* head) {
+        Node* prev = NULL;
+        Node* fast = head;
+        Node* slow = head;
+        bool isLoop = false;
+        while(fast && fast->next){
+            fast = fast->next->next;
+            prev = slow;
+            slow = slow->next;
+            if(fast == slow){
+                isLoop = true;
+                break;
+            }
+        }
+        if(!isLoop)
+            return;
+        // special case in this approach when the fast and slow meet at head then the normal algo will not enter while loop
+        if(slow == head){
+            prev->next = NULL;
+            return;
+        }
+        slow = head;
+        // initiating prev with fast and storing previous pointer so as to access it later to remove the loop
+        prev = fast;
+        while(slow != fast){
+            prev = fast;
+            slow = slow->next;
+            fast = fast->next;
+        }
+        prev -> next = NULL;
+    } // DOUBT: what are the other two ways
 };
 int main(){
 
