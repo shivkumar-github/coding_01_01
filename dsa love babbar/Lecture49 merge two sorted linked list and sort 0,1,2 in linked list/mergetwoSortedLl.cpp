@@ -127,7 +127,7 @@ public:
 		ListNode *n2 = c2->next;
 		if (n1 == NULL)
 		{
-			n1 = list2;
+			c1->next = list2;
 			return list1;
 		}
 		while (n1 != NULL && c2 != NULL)
