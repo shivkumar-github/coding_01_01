@@ -39,7 +39,6 @@ int partition(int arr[], int s, int e)
                         swap(arr[i++], arr[j--]);
                 }
         }
-
         return pivotIndex;
 }
 
@@ -50,7 +49,7 @@ void quickSort(int arr[], int s, int e)
         if (s >= e)
                 return;
 
-        // partitioon karenfe
+        // partition karen
         int p = partition(arr, s, e);
         // left part sort karo
         quickSort(arr, s, p - 1);

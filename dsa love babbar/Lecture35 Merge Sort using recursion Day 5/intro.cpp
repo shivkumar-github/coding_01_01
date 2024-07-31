@@ -38,7 +38,7 @@ void merge(int *arr, int s, int e)
     while (index1 < len1 && index2 < len2)
     {
         if (first[index1] <= second[index2])
-        {z
+        {
             arr[mainArrInd++] = first[index1++];
         }
         else

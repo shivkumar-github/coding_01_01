@@ -30,13 +30,18 @@ void bubbleSort(vector<int> &arr, int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < n - i - 1; j++) // 
+        bool swapped = false;
+        for (int j = 0; j < n - i - 1; j++) //
         {
             if (arr[j + 1] < arr[j]) // standard conditions for all sorting
             {
                 swap(arr[j + 1], arr[j]);
+                swapped = true;
             }
         }
+        // if not swapped once that means every element after an element is greater than that element i.e. array is already sorted
+        if (!swapped)
+            break;
     }
 }
 

@@ -40,7 +40,7 @@ void printList(Node* head) {
 class Solution
 {
     public:
-    //Function to remove duplicates from unsorted linked list.
+    // approach 1 using map
     Node * removeDuplicates( Node *head) 
     {
      // your code goes here
@@ -68,6 +68,7 @@ class Solution
         }
         return head;
     }
+	// approach 2 by sorting first and then removing 
 };
 // Function to insert a new node at the end of the linked list
 
