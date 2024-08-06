@@ -57,7 +57,7 @@ int majorityElement(vector<int> v){
         if (v[i] == candEl)
         {
             cnt1++;
-        }
+        x}
         
     }
     if(cnt1 > v.size()/2)

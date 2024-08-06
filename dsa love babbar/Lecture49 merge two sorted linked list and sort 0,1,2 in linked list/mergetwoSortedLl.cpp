@@ -43,40 +43,43 @@ void printList(ListNode *head)
 class Solution
 {
 public:
+	class Solution
+{
+public:
+	// if data changing is not allowed
+	// BEST SOLUTION :
 	ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
 	{
 		if (!list1 || !list2)
-			return (list1) ? list1 : list2;
-		ListNode *dummy = new ListNode(0);
-		ListNode *prv = dummy; // node to access previous node
+			return list1 ? list1 : list2;
+		ListNode *dmy = new ListNode(0);
+		dmy->next = list1;// setting 1st linked as main and then inserting the nodes of second list according to increasing order
+        ListNode *p = dmy;
 		while (list1 && list2)
 		{
-			if (list1->val <= list2->val)
-			{ // if first ll node is smaller
-				prv->next = list1;
-				list1 = list1->next;
+			if (list2->val < list1->val)
+			{
+				ListNode *n2 = list2->next;
+				p->next = list2;
+				list2->next = list1;
+				list2 = n2;
+				p = p->next;
 			}
 			else
-			{ // second ll node is smaller
-				prv->next = list2;
-				list2 = list2->next;
+			{
+				list1 = list1->next;
+				p = p->next;
 			}
-			// update prv
-			prv = prv->next;
 		}
-		// link remaining list
-		if (list1)
-		{
-			prv->next = list1;
+		if(!list1 && list2){
+			p->next = list2;
 		}
-		else
-		{
-			prv->next = list2;
-		}
-		// update new head
-		ListNode *head = dummy->next;
-		return head;
+		list1 = dmy->next;
+		dmy->next = NULL;
+		delete dmy;
+		return list1;
 	}
+};
 
 	// if data changing is  allowed (using vector and linked list)
 	ListNode *mergeTwoLists1(ListNode *list1, ListNode *list2)
